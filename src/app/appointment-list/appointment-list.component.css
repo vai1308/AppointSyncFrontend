@@ -1,0 +1,105 @@
+.theme-bar {
+  width: 60%;
+  margin: 10px auto;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.card {
+  width: 55%;
+  margin: 0 auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.badge {
+  font-size: 0.85rem;
+}
+
+/* Spinner Overlay */
+.spinner-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 50;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.details-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 25em;
+  z-index: 11;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Toasts */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 60;
+}
+
+.toast-success, .toast-error {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.toast-success { background-color: #28a745; }
+.toast-error { background-color: #dc3545; }
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: white;
+  border: 1px solid #333;
+}
+
+body.dark-mode nav,
+body.dark-mode h2 {
+  background-color: #333;
+  color: white;
+}

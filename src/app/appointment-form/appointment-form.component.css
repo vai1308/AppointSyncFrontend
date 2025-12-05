@@ -1,0 +1,23 @@
+.form-body{
+    border: 1.5px solid var(--themecolor);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30em;
+    margin: 20px auto;
+    padding: 10px;
+    color: var(--fontcolor);
+    font-weight: bold;
+}
+
+#submit{
+    width: 50%;
+    margin: 0 auto
+}
+
+.btn{
+    background-color: var(--themecolor);
+    color: black;
+    font-weight: bold;
+}

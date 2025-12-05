@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --themecolor: #a2d2ff;
+  --fontcolor: black;
+}
+
+/* DARK MODE GLOBAL OVERRIDES */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar a {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #fff !important;
+}
+
+body.dark-mode .card {
+  background-color: #1f1f1f !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #2a2a2a !important;
+  color: white !important;
+  border-color: #555 !important;
+}
+
+body.dark-mode label,
+body.dark-mode #search {
+    color: white !important;
+}
+
+body.dark-mode .btn {
+  background-color: #444 !important;
+  color: white !important;
+}
+
+body.dark-mode .modal-content {
+  background-color: #2b2b2b !important;
+  color: white !important;
+}
+
+body.dark-mode .toast-success {
+  background-color: #198754 !important;
+}
+
+body.dark-mode .toast-error {
+  background-color: #bb2d3b !important;
+}
