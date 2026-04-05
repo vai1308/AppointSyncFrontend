@@ -2,13 +2,13 @@
   <div class="form-floating mb-3">
     <input type="text" class="form-control border-primary" placeholder="Appointee's Name"
       [(ngModel)]="name" name="name">
-    <label>Name</label>
+    <label>Name of Group</label>
   </div>
 
   <div class="form-floating mb-3">
-    <textarea class="form-control border-primary" placeholder="Purpose" rows="3"
-      [(ngModel)]="purpose" name="purpose"></textarea>
-    <label>Purpose of Appointment</label>
+    <input type="text" class="form-control border-primary" placeholder="Project Name"
+      [(ngModel)]="purpose" name="purpose">
+    <label>Project Name</label>
   </div>
 
   <div class="mb-3">
@@ -25,13 +25,12 @@
     <label class="form-label">Status</label>
     <select class="form-control border-primary" [(ngModel)]="status" name="status">
       <option>Pending</option>
-      <option>Confirmed</option>
       <option>Completed</option>
       <option>Cancelled</option>
     </select>
   </div>
 
-  <input type="submit" class="btn" id="submit" value="Add Appointment">
+  <input type="submit" class="btn" id="submit" value="Schedule Project">
 </form>
 
 <!-- Toast Notification -->

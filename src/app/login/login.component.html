@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <p class="subtitle">Sign in to manage your appointments.</p>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input class="form-control" [(ngModel)]="username" name="username">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" name="password">
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger py-1">{{ error }}</div>
+
+    <button class="btn btn-primary w-100 mt-2" type="submit">
+      Login
+    </button>
+  </form>
+
+  <div class="bottom-text">
+    Don’t have an account?
+    <a routerLink="/register">Register here</a>
+  </div>
+</div>

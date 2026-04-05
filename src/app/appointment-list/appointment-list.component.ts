@@ -65,7 +65,7 @@ export class AppointmentListComponent implements OnInit {
         this.loading = false;
       },
       error: () => {
-        this.showAlert('Failed to load appointments', 'error');
+        this.showAlert('Failed to load schedules', 'error');
         this.loading = false;
       }
     });
@@ -81,13 +81,13 @@ export class AppointmentListComponent implements OnInit {
   }
 
   deleteAppointment(id: number) {
-    if (confirm('Are you sure you want to delete this appointment?')) {
+    if (confirm('Are you sure you want to delete this scheduule?')) {
       this.api.deleteAppointment(id).subscribe({
         next: () => {
-          this.showAlert('Appointment deleted', 'success');
+          this.showAlert('Schedule deleted', 'success');
           this.getAppointments();
         },
-        error: () => this.showAlert('Failed to delete appointment', 'error')
+        error: () => this.showAlert('Failed to delete schedule', 'error')
       });
     }
   }

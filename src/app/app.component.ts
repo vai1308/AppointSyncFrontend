@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ThemeService } from './services/theme.service';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  constructor(public theme: ThemeService) {}
+  constructor(public auth: AuthService) {}
 
-  toggleTheme() {
-    this.theme.toggleTheme();
+  logout() {
+    this.auth.logout();
   }
 }

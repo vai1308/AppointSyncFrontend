@@ -30,6 +30,7 @@ export class AppointmentFormComponent {
   date: any = '';
   time: any = '';
   status = 'Pending';
+  description = '';
 
   showToast = false;
   toastMessage = '';
@@ -53,6 +54,7 @@ export class AppointmentFormComponent {
     const data = {
       name: this.name,
       purpose: this.purpose,
+      description: this.description,
       date: this.date,
       time: this.time,
       status: this.status

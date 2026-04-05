@@ -1,7 +1,7 @@
 <app-appointment-form (appointmentAdded)="getAppointments()"></app-appointment-form>
 
 <div class="d-flex justify-content-between align-items-center mx-auto theme-bar">
-  <h2>Appointments</h2>
+  <h2>Schedules</h2>
 </div>
 
 <!-- Filters -->
@@ -11,7 +11,6 @@
   <select class="form-select" [(ngModel)]="filterStatus" (change)="filterAppointments()">
     <option value="">All</option>
     <option>Pending</option>
-    <option>Confirmed</option>
     <option>Completed</option>
     <option>Cancelled</option>
   </select>
@@ -26,12 +25,12 @@
 
 <!-- Appointment Cards -->
 <div *ngIf="!loading && filteredAppointments.length === 0" class="text-center mt-3">
-  <strong>No appointments found</strong>
+  <strong>No schedules found</strong>
 </div>
 
 <div *ngFor="let appointment of filteredAppointments; index as i" [@fadeIn]>
   <div class="card text-center mb-3 shadow-sm">
-    <div class="card-header">Appointment #{{ i + 1 }}</div>
+    <div class="card-header">Schedule #{{ i + 1 }}</div>
     <div class="card-body">
       <h5>{{ appointment.name }}</h5>
       <p>{{ appointment.purpose }}</p>
@@ -40,7 +39,6 @@
                 [(ngModel)]="appointment.status"
                 (change)="updateStatus(appointment)">
           <option>Pending</option>
-          <option>Confirmed</option>
           <option>Completed</option>
           <option>Cancelled</option>
         </select>
@@ -52,7 +50,6 @@
       <small>{{ appointment.date }} at {{ appointment.time }}</small><br>
       <span [ngClass]="{
         'badge bg-warning text-dark': appointment.status === 'Pending',
-        'badge bg-info text-dark': appointment.status === 'Confirmed',
         'badge bg-success': appointment.status === 'Completed',
         'badge bg-danger': appointment.status === 'Cancelled'
       }">
@@ -67,7 +64,7 @@
 <div class="details-modal" *ngIf="selectedAppointment" [@fadeIn]>
   <div class="modal-content shadow-lg">
     <h4>{{ selectedAppointment.name }}</h4>
-    <p><strong>Purpose:</strong> {{ selectedAppointment.purpose }}</p>
+    <p><strong>Project Name:</strong> {{ selectedAppointment.purpose }}</p>
     <p><strong>Date:</strong> {{ selectedAppointment.date }}</p>
     <p><strong>Time:</strong> {{ selectedAppointment.time }}</p>
     <p><strong>Status:</strong> {{ selectedAppointment.status }}</p>

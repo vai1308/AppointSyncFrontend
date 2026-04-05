@@ -1,11 +1,16 @@
 <nav class="navbar">
-  <div class="nav-center">
-    <a routerLink="/" routerLinkActive="active-link">AppointSync</a>
+  <div class="nav-left">
+    <a routerLink="/appointments" routerLinkActive="active-link">Project Scheduler</a>
   </div>
 
-  <button class="theme-toggle-btn btn btn-dark btn-outline-light" (click)="toggleTheme()">
-    {{ theme.isDarkMode() ? '☀️ Light Mode' : '🌙 Dark Mode' }}
-  </button>
+  <div class="nav-right">
+    <button *ngIf="!auth.isLoggedIn()" class="btn btn-outline-light btn-sm" routerLink="/login">
+      Login
+    </button>
+    <button *ngIf="auth.isLoggedIn()" class="btn btn-outline-light btn-sm" (click)="logout()">
+      Logout
+    </button>
+  </div>
 </nav>
 
 <router-outlet></router-outlet>
